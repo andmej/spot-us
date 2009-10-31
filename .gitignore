@@ -8,3 +8,5 @@ db/schema.rb
 public/system
 public/coverage
 public/features_rcov
+*~
+passwords.txt
