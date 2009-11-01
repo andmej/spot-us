@@ -12,10 +12,14 @@ if APP_CONFIG[:action_mailer].is_a?(Hash)
 end
 
 config.after_initialize do
-  Purchase.gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new({
-    :login    => APP_CONFIG[:gateway][:login],
-    :password => APP_CONFIG[:gateway][:password],
-  })
+  if APP_CONFIG[:gateway].is_a?(Hash)
+    Purchase.gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new({
+      :login    => APP_CONFIG[:gateway][:login],
+      :password => APP_CONFIG[:gateway][:password],
+    })
+  else
+    Purchase.gateway = ActiveMerchant::Billing::BogusGateway.new
+  end
 end
 PAYPAL_POST_URL = "https://www.paypal.com/cgi-bin/webscr"
 PAYPAL_EMAIL = "info@spot.us"
