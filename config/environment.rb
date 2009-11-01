@@ -44,7 +44,7 @@ ActionController::Base.session_options[:domain] = DEFAULT_HOST
 SubdomainFu.tld_sizes = { :development => 1,
                           :test => 1,
                           :staging => 2,
-                          :production => 1 }
+                          :production => 3 }
 
 # These are the subdomains that will be equivalent to no subdomain
 SubdomainFu.mirrors = %w(www spotus)
