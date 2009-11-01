@@ -4,7 +4,7 @@ config.action_mailer.raise_delivery_errors = false
 config.action_view.debug_rjs = false
 config.cache_classes = true
 config.whiny_nils = true
-SslRequirement.disable_ssl_check = false
+SslRequirement.disable_ssl_check = true
 
 if APP_CONFIG[:action_mailer].is_a?(Hash)
   config.action_mailer.delivery_method = APP_CONFIG[:action_mailer][:delivery_method]
