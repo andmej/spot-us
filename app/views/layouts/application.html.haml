@@ -10,7 +10,7 @@
         .block-spacer-negative.no_margin
         .box_white
           - if @current_network.nil?
-            All Networks
+            Toda España
           - else
             = link_to 'All Networks', root_url(:subdomain => false)
           - Network.all.each do |network|

@@ -1,11 +1,11 @@
 #header
   .logo
     %p
-      = link_to "<span class='hide'>Spot.us - Community Funded Reporting</span>", "/", :class => "logo-link", :title => "Spot.us - Community Funded Reporting"
+      = link_to "<span class='hide'>Spot.us - Periodismo a la carta</span>", "/", :class => "logo-link", :title => "Spot.us - Periodismo a la carta"
   .nav-container
     %ul#main-nav
-      %li.start_story= facebox_login_link_to "Start a Story", start_story_path
-      %li.fund_story= link_to "Search Pitches", news_items_path
-      %li.read_story= link_to "Read a Story", stories_path
+      %li.start_story= facebox_login_link_to "Propon un tema", start_story_path
+      %li.fund_story= link_to "Investigaciones", news_items_path
+      %li.read_story= link_to "Publicaciones", stories_path
       %li.about_spotus= link_to "About", page_path('about')
   .clear

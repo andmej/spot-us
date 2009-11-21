@@ -1,14 +1,14 @@
 #footer-copyright
   .double_footer_border
-  .logo-footer= link_to "<span class='hide'>Spot.us - Community Funded Reporting</span>", "/", :class => "logo-footer-link", :title => "Spot.us - Community Funded Reporting"
+  .logo-footer= link_to "<span class='hide'>Spot.us - El periodismo a la carta</span>", "/", :class => "logo-footer-link", :title => "Spot.us - El periodismo a la carta"
   %ul.footer-nav
     %li= link_to "About", page_path('about')
-    %li= link_to "Blog", 'http://blog.spot.us'
+    %li= link_to "Blog", 'http://blog.periodismoalacarta.com'
     %li= link_to "Press", page_path('press')
-    %li= link_to "Contact", page_path('contact')
+    %li= link_to "Contacto", page_path('contact')
     %li.no-pipe= link_to "Terms of Use", page_path('terms')
     %li.no-pipe and
-    %li.no-pipe= link_to "Privacy Policy", page_path('privacy')
-  %p== Copyright &copy; #{Time.now.year} Spot.us
+    %li.no-pipe= link_to "Politica de privacidad", page_path('privacy')
+  %p== Copyright &copy; #{Time.now.year} Periodismoalacarta.com
   = render :partial => 'layouts/partners'
   .clear

@@ -22,4 +22,4 @@ config.after_initialize do
   end
 end
 PAYPAL_POST_URL = "https://www.paypal.com/cgi-bin/webscr"
-PAYPAL_EMAIL = "info@spot.us"
+PAYPAL_EMAIL = "latorre.gg@gmail.com"

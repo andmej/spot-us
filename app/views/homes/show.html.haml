@@ -4,7 +4,7 @@
   %div.home-floater.home-image-box{:style=>"width:425px;float:left;background: #fff;"}
     .home-floater
       %h3{:style => "color: red;"}
-        %strong Spot.Us' Video Spot
+        %strong Como funciona
       .double_content_border
       = site_option_content_for(:video_content)
       = change_site_option(:video_content)
@@ -16,9 +16,9 @@
     - else
       #pitches_carousel
         %h3.float-left{:style => "color: red;"} 
-          %strong Help Fund this Story
+          %strong Ayuda a financiar esta investigacion
         .float-right
-          %span= link_to "View more Pitches &raquo;", news_items_path
+          %span= link_to "Ver mas investigaciones &raquo;", news_items_path
         .double_content_border.clear
         %ul
           = render :collection => @featured, :partial => 'featured_pitch'
@@ -27,8 +27,8 @@
           %a.prev.arrow.float-left Prev
           %a.next.arrow.float-right Next
       %h5.quiet{:style=>"margin:0;"}
-        If you want to see this story researched, written, and published,
-        click donate to help fund it!  
+        Si quieres ver este artículo investigado, redactado y publicado,
+        haz click en donar para ayudar a financiarlo!  
 .clear
 - # spotus_ie_pixel.gif is an IE fix
 %img{:src=>"../images/spotus_ie_pixel.gif"}

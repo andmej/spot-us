@@ -1,10 +1,7 @@
 unless Rails.env.production?
   testing_users = [
-    %w(David Cohn dcohn1@gmail.com),
-    %w(Desi McAdam desi@hashrocket.com),
-    %w(Jon Larkowski lark@hashrocket.com),
-    %w(Carmelyne Thompson carmelyne@hashrocket.com),
-    %w(Tien Dung dungtn@gmail.com)
+    %w(David Cohn latorre.gg@gmail.com),
+
   ]
 
   testing_users.each_with_index do |u, i|
