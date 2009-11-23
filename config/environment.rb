@@ -26,6 +26,9 @@ Rails::Initializer.run do |config|
   config.gem "money", :version => ">=2.1.3"
   config.gem 'mbleigh-subdomain-fu', :source => "http://gems.github.com/", :lib => "subdomain-fu"
 
+  # For sending email with Gmail (or Google Apps)
+  config.gem "ambethia-smtp-tls", :lib => "smtp-tls", :source => "http://gems.github.com/"
+
   config.time_zone = 'UTC'
 
   config.load_paths += %W( #{RAILS_ROOT}/app/sweepers )
