@@ -38,7 +38,7 @@ Rails::Initializer.run do |config|
 
   config.action_controller.session = { :session_key => '_spotus_session', :secret => secret }
 
-  config.log_level = Logger::DEBUG
+  config.log_level = :debug
 end
 
 # use this domain for cookies so switching networks doesn't drop cookies
