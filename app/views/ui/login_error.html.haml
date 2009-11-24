@@ -6,16 +6,16 @@
   %p Please correct these items:
   %ul
     %li Invalid E-mail Address or Password
-  %p 
-    If you're experiencing a persistent problem, email 
-    = mail_to "david@spot.us", nil, :encode =>
+  %p
+    If you're experiencing a persistent problem, email
+    = mail_to "adrian@periodismoalacarta.com", nil, :encode =>
     "hex" <br />Seriously, this guy doesn't sleep and he wants the site to work for you!!!
 
 .block-padding
 
 .login-boxer
 
-  - # Register box 
+  - # Register box
   .span-6.register
     %h3 Register
     .double_content_border
@@ -37,13 +37,13 @@
     .row
       .float_left= radio_button_tag("", "", "")
       %label.float_left News Organization
-    .block-padding.clear 
+    .block-padding.clear
     %p We'll email you a password which you can login and change.
     .double_content_border
     .float_right
       %input{:type => "image", :src=>"../images/register.png"}
-    
-  - # Login box 
+
+  - # Login box
   .span-6.or_login
     %h3 Or Login
     .double_content_border
@@ -65,8 +65,8 @@
     .double_content_border
     .float_right
       %input{:type => "image", :src=>"../images/login.png"}
-    
-    
+
+
   .clear
 %img{:src=>"../images/spotus_ie_pixel.gif"}
 .block-padding

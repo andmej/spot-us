@@ -2,12 +2,12 @@
 .double_content_border
 %p
   Perhaps you have some questions. That's great. We love them. Don't hesitate to contact us
-  = mail_to "david@spot.us", nil, :encode => "hex"
+  = mail_to "adrian@periodismoalacarta.com", nil, :encode => "hex"
   Or check out our....
 %h3= link_to "FAQ", page_path('about')
 .double_content_border
 %p
-  In the FAQ you'll find answers to common questions from 
+  In the FAQ you'll find answers to common questions from
   == #{link_to "citizens", page_path("about") + "#faq_citizen"},
   == #{link_to "reporters", page_path("about") + "#faq_reporter"},
   == #{link_to "news organizations", page_path("about") + "#faq_news_organization"}.
