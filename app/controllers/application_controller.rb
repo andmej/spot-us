@@ -139,6 +139,8 @@ class ApplicationController < ActionController::Base
 
   def print_authenticity_token
     logger.debug "Authenticity token is: #{form_authenticity_token}"
+    logger.debug "session[:snerol] is #{session[:snerol]}"
+    session[:snerol] = "monkey"
   end
 
 end
