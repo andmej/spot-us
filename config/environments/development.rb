@@ -35,7 +35,7 @@ PAYPAL_POST_URL = "https://www.sandbox.paypal.com/cgi-bin/webscr"
 PAYPAL_EMAIL = "info+s_1240233800_per@spot.us"
 
 config.action_mailer.perform_deliveries = true
-config.action_mailer.raise_delivery_errors = true
+config.action_mailer.raise_delivery_errors = false
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
   :enable_starttls_auto => false,

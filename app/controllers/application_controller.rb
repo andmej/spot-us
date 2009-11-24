@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation, :credit_card_number
   helper :all # include all helpers, all the time
 
-  before_filter :print_authenticity_token
-
   include AuthenticatedSystem
   include SslRequirement
 
