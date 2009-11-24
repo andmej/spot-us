@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation, :credit_card_number
   helper :all # include all helpers, all the time
 
+  before_filter :print_authenticity_token
+
   include AuthenticatedSystem
   include SslRequirement
 
@@ -132,4 +134,11 @@ class ApplicationController < ActionController::Base
       redirect_to url
     end
   end
+
+  protected
+
+  def print_authenticity_token
+    logger.debug "Authenticity token is: #{form_authenticity_token}"
+  end
+
 end
