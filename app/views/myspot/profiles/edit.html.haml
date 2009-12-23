@@ -1,6 +1,6 @@
-- @title = "Spot.us - Member Profile"
+- @title = "Periodismoalacarta.com - Perfil de miembro"
 .block-spacer
-%h3 My Spot
+%h3 Mi cuenta
 
 = render :partial => 'myspot/nav'
 
@@ -13,7 +13,7 @@
   - # first column content 
   - form_for :profile, :url => myspot_profile_path, :html => { :method => :put, :multipart => true } do |f|
     .span-605.box_white
-      %h3 Edit Your Profile
+      %h3 Edita tu perfil
       = render :partial => "myspot/profile_nav"
       .double_content_border
       .span-595.box_yellow.create_a_tip_form
@@ -24,7 +24,7 @@
             = f.label :photo
             .float_left= image_tag @profile.photo.url(:thumb), :class => 'thumbnail'
             .float_left{:style=>"margin-left:10px"}
-              .small{:style=>"margin:0"} Upload a new image. Photos are 50x50 pixels
+              .small{:style=>"margin:0"} Sube una nueva imagen. Las fotos son de 50x50 pixels
               = f.file_field :photo, :size => 15
             .clear
           .yellow-spacer-negative
@@ -37,7 +37,7 @@
             = f.text_field :last_name
           .yellow-spacer-negative
         .row
-          = f.label :website, "Website <span class='small quieter'>Use http://www.</span>"
+          = f.label :website, "Sitio Web <span class='small quieter'>Use http://www.</span>"
           = f.text_field :website
         .yellow-spacer-negative
         .row
@@ -45,7 +45,7 @@
         - if @profile.is_a?(Reporter)
           .yellow-spacer-negative
           .row
-            = f.label :fact_check_interest, "I am interested in being a Peer-Review Editor"
+            = f.label :fact_check_interest, "Estoy interesado en ser un Editor"
             = f.check_box :fact_check_interest
         .yellow-spacer-negative
         .row

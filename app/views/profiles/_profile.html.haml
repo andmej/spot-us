@@ -12,12 +12,12 @@
 
 - unless @profile.about_you.blank?
   %h3
-    About
+    Sobre
     = @profile.first_name
   .alt-spotus= sanitize @profile.about_you
 
 - if @profile.is_a?(Reporter) && @profile.samples.any?
-  %h3 Work Samples
+  %h3 Ejemplos de trabajos
   %hr
   - for sample in @profile.samples
     .show_profile_jobs
@@ -30,7 +30,7 @@
         %span.work_title= h sample.title
       .work_description= sanitize(sample.description)
 - if @profile.is_a?(Reporter) && @profile.jobs.any?
-  %h3 Work History
+  %h3 Historial de trabajo
   %hr
   - for job in @profile.jobs
     .show_profile_jobs

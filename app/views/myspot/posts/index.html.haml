@@ -1,4 +1,4 @@
-%h2 My Spot
+%h2 Mi cuenta
 
 = render :partial => "myspot/nav"
 
@@ -6,15 +6,15 @@
   = render :partial => "myspot/dashboard_nav"
   - if @posts.blank?
     %p
-      You haven't made any blog posts yet.  Visit the
-      = link_to 'My Pitches', myspot_pitches_path
-      page to make one.
+      No has hecho comentarios en ningún blog todavía. Visita 
+      = link_to 'Mis artículos propuestos', myspot_pitches_path
+      para realizar uno.
   - else
     %table
       %tr
-        %th Pitch
-        %th Title
-        %th Actions
+        %th Artículos
+        %th Título
+        %th Acciones
       - @posts.each do |post|
         %tr
           %td.pitch
@@ -23,4 +23,4 @@
           %td= link_to post.title, pitch_post_url(post.pitch, post)
           %td
             = link_to 'Edit', edit_pitch_post_url(post.pitch, post)
-            = link_to 'Delete', pitch_post_url(post.pitch, post), :method => :delete, :confirm => "Are you sure you want to delete this blog post?"
+            = link_to 'Delete', pitch_post_url(post.pitch, post), :method => :delete, :confirm => "¿Estás seguro de que quieres borrar este comentario?"

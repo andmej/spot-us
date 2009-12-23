@@ -1,4 +1,4 @@
-- @title = "Spot.us - Fund Your Donations"
+- @title = "Periodismoalacarta.com - Mis donaciones"
 .block-spacer
 - content_for :head do
   :javascript
@@ -18,12 +18,12 @@
 
   - # first column content 
   .span-715.box_white
-    %h2{:style => "color: #800000; text-align: center;"} Almost done! One more step:
+    %h2{:style => "color: #800000; text-align: center;"} Casi hecho! Un paso más:
     .block-spacer-negative 
     - if current_user.total_credits > 0
       .float-right
-        == You have #{number_to_currency(current_user.total_credits)} in credits
-    %h3 Fund Your Donations
+        == Tienes #{number_to_currency(current_user.total_credits)} en créditos
+    %h3 Donaciones
     .double_content_border
 
     - form_tag myspot_donations_amounts_path, :method => :put do
@@ -34,11 +34,11 @@
               = link_to image_tag(donation.pitch.featured_image.url(:thumb)), donation.pitch
             .column.span-550
               %h3 
-                PITCH:
+                Artículo:
                 = link_to donation.pitch.headline, donation.pitch
               - if Group.all.any?
                 %p
-                  Donate on behalf of:
+                  Donación a nombre de:
                   = select_tag "donation_amounts[#{donation.id}][group_id]", '<option value=''>Giving for a group?</option>' + options_from_collection_for_select(Group.all, :id, :name), :include_blank => true
               %p
                 = truncate_words(donation.pitch.short_description)
@@ -46,15 +46,15 @@
             .column.span-95
               $
               = text_field_tag "donation_amounts[#{donation.id}][amount]", number_to_currency(donation.amount, :delimiter => '', :unit => ''), :size => 4, :id => "donation_amounts_#{donation.id}_amount"
-              .action= link_to "Remove", myspot_donation_path(donation), :method => :delete, :confirm => "Are you sure you'd like to remove this donation of #{number_to_currency(donation.amount)}?"
+              .action= link_to "Eliminar", myspot_donation_path(donation), :method => :delete, :confirm => "¿Estás seguro de que quieres eliminar esta donación? #{number_to_currency(donation.amount)}?"
             %hr
         %li#support_spotus
           .column.span-70
             = image_tag('support_spotus.png')
           .column.span-550
-            %h3 Support Spot.Us
+            %h3 Colaborar con Periodismoalacarta.com
             %p
-              Spot.Us is a nonprofit project to pioneer "community funded reporting." Through Spot.Us the public can commission journalists to do investigations into important and perhaps overlooked stories.
+              Periodismoalacarta.com es una organización no lucrativa, pionera en el periodismo financiado en comunidad. A través de nosotros el público puede contratar a periodistas para realizar investigaciones que pueden descubrir, tal vez, grandes historias. 
           .column.span-95
             $
             = text_field_tag "spotus_donation_amount", number_to_currency(spotus_donation.amount, :unit => ''), :size => 5, :id => "spotus_donation"

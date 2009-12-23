@@ -1,10 +1,10 @@
-- @title = "Spot.us - Story: #{h @story.headline}"
+- @title = "Spot.us - Historias publicados: #{h @story.headline}"
 
 .block-spacer
 #equalize
   .span-455.box_white
     %h2.headline
-      Story:
+      Historia:
       %strong= h @story.headline
     .double_content_border
     = render :partial => 'news_items/user', :locals => { :news_item => @story }
@@ -20,28 +20,28 @@
         .double_content_border
         = @story.video_embed
     - if @story.published?
-      %h3 Comments
+      %h3 Commentarios
       .double_content_border
       .comments
-        %p= "There are no comments yet, be the first!" if @story.comments.empty?
+        %p= "No hay comentarios todavía !Se el primero!" if @story.comments.empty?
         = render :partial => 'shared/comment', :collection => @story.comments
-      %h3 Post A Comment
+      %h3 Publicar un comentario
       .double_content_border
       - form_for [@story, Comment.new], :html => {:class => 'auth'} do |f|
         = render :partial => 'comments/form', :locals => {:f => f}
   .span-220.column_v.box_white
     %h3.description
-      History of this story
+      Historial de esta publicación
     .double_content_border
     %h4#history
-      PITCH:
+      Artículo:
       %strong= link_to h(@story.pitch.headline), @story.pitch
     .dateline.small.quiet
-      Posted
+      Publicada
       = @story.pitch.created_at.to_s(:long_date)
-      by
+      por
       = link_to h(@story.pitch.user.full_name), profile_path(@story.pitch.user)
-      in
+      en
       = @story.pitch.network.name
     %p.short_description.alt-spotus
       = truncate_words(@story.pitch.short_description, 30)
@@ -49,27 +49,27 @@
 
     - unless @story.license.blank?
       .block-spacer-negative
-      %h3 License
+      %h3 Licencias
       .double_content_border
       = @story.license
 
     - unless @story.external_links.blank?
       .block-spacer-negative
-      %h3 External Links
+      %h3 Links externos
       .double_content_border
       .external_links
         = @story.external_links
 
     - unless @story.pitch.keywords.blank?
       .block-spacer-negative
-      %h3 Keywords
+      %h3 Palabras claves
       .double_content_border
       %p= h @story.pitch.keywords
     - if logged_in?
       .block-spacer-negative
       = publishing_workflow_buttons_for(current_user)
   .span-160.box_white
-    = render :partial => "supporters", :locals => {:story => @story}
+    = render :partial => "Colaboradores", :locals => {:story => @story}
 .clear
 .block-spacer
 

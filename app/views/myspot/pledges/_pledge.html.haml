@@ -12,5 +12,5 @@
       = number_to_currency(pledge.tip.total_amount_pledged)
       Pledged
   %td.actions
-    .action= link_to "Remove", pledge_url(pledge), :method => :delete, :confirm => "Are you sure you'd like to remove this pledge of #{number_to_currency(pledge.amount)}?"
+    .action= link_to "Remove", pledge_url(pledge), :method => :delete, :confirm => "Estás seguro de que quieres eliminar tu compromiso de #{number_to_currency(pledge.amount)}?"
 

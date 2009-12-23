@@ -1,16 +1,16 @@
-- @title = "Spot.us - Home"
+- @title = "Periodismoalacarta.com - Inicio"
 .block-spacer
 .home-boxer
   %div.home-floater.home-image-box{:style=>"width:425px;float:left;background: #fff;"}
     .home-floater
       %h3{:style => "color: red;"}
-        %strong Como funciona
+        %strong Cómo funciona
       .double_content_border
       = site_option_content_for(:video_content)
       = change_site_option(:video_content)
   %div.home-floater{:style=>"width:460px;float:right;background: #fff;"}
     - unless @featured
-      %h3 Create the first story
+      %h3 Crea la primera historia
       .double_content_border
       %p Text about making the first story
     - else
@@ -18,7 +18,7 @@
         %h3.float-left{:style => "color: red;"}
           %strong Ayuda a financiar esta investigación
         .float-right
-          %span= link_to "Ver mas investigaciones &raquo;", news_items_path
+          %span= link_to "Ver más investigaciones &raquo;", news_items_path
         .double_content_border.clear
         %ul
           = render :collection => @featured, :partial => 'featured_pitch'

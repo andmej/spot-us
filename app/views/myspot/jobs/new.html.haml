@@ -1,10 +1,10 @@
-%h2 My Spot
+%h2 Mi cuenta
 
 = render :partial => "myspot/nav"
 
 #equalize
   .span-715.box_white
-    %h3 Edit Work History
+    %h3 Editar historial de trabajo
     = render :partial => "myspot/profile_nav"
     .double_content_border
     - remote_form_for [:myspot, :profile, @job] do |f|
@@ -26,7 +26,7 @@
       .clear
     .block-spacer-negative
   
-    %h3 Saved Work History
+    %h3 Historial de trabajo guardado
     .double_content_border
     .span-595
       #work_history

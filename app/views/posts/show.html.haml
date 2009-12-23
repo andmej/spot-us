@@ -1,4 +1,4 @@
-- @title = "Spot.us - #{h @post.title} - Pitch: #{h @post.pitch.headline}"
+- @title = "Periodismoalacarta.com - #{h @post.title} - Artículo: #{h @post.pitch.headline}"
 
 .block-spacer
 #equalize
@@ -9,7 +9,7 @@
     = render :partial => 'shared/user', :locals => { :user => @post.user }
     .double_content_border.clear
     %h2.headline
-      Related pitch
+      Artículos relacionados
     .pitch_summary
       .float-left
         = link_to image_tag(@post.pitch.featured_image.url(:thumb)), pitch_url(@post.pitch)

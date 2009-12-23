@@ -1,6 +1,6 @@
 - content_for :head do
   = auto_discovery_link_tag(:rss, {:controller => 'pitches', :action => 'blog_posts', :id => @pitch.id, :format => 'rss'})
-- @title = "Spot.us - Blog posts for Pitch: #{h @pitch.headline}"
+- @title = "Periodismoalacarta.com - Comentario en el blog de: #{h @pitch.headline}"
 
 .block-spacer
 #equalize
@@ -10,7 +10,7 @@
     .double_content_border
     = render :partial => 'news_items/user', :locals => { :news_item => @pitch }
     %h2.headline
-      Related pitch
+      Artículo relacionado
     .pitch_summary
       .float-left
         = link_to image_tag(@pitch.featured_image.url(:thumb)), pitch_url(@pitch)

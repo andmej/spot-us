@@ -1,26 +1,26 @@
-- @title = "Spot.us - Login"
+- @title = "Periodismoalacarta.com - Login"
 - if login_failed?
   - content_for :error do
-    %h2 Sorry about that.
-    %p Check below to see what happened:
+    %h2 Lo sentimos,
+    %p Mira debajo para ver que ocurre:
     %ul
-      %li Was it an invalid E-mail address or password?
-      %li Have you activated your account? You should receive an email with an activation link after signing up.
+      %li ¿Pusiste un email incorrecto o cotnraseña equivocada?
+      %li ¿Has activado tu cuenta? Debes activar el email de activación despues de registrarte. 
     %p
-      If you're experiencing a persistent problem, email
+      Si el problema persiste escríbenos
       = mail_to 'adrian@periodismoalacarta.com', nil, :encode => "hex"
       %br
-      Seriously, this guy doesn't sleep and he wants the site to work for you!!!
+      Te contestaremos rápidamente. 
 
 .block-padding
 .login-boxer
   - form_tag session_url do
     .span-6.or_login
-      %h3 Thanks for joining us!
+      %h3 ¡Gracias por unirte a nosotros!
       = link_to "NEW USERS: REGISTER HERE", new_user_path
       %br
       %span.small.quieter
-        If we already know you - login below.
+        Si ya eres miembro - Login abajo.
       %br
       .double_content_border
       = render :partial => 'sessions/form'

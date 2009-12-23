@@ -1,4 +1,4 @@
-- @title = "Spot.us - Your Donations"
+- @title = "Periodismoalacarta.com - Tus donaciones"
 .block-spacer
 
 - unless @purchase.errors.empty?
@@ -16,7 +16,7 @@
     - @donations.each do |donation|
       .donation
         .float-left
-          PITCH:
+          Artículo:
           %strong= h donation.pitch.headline
           - if donation.group
             == (#{donation.group.name})
@@ -25,14 +25,14 @@
         .clear
     .donation
       .float-left
-        %strong Support Spot.Us
+        %strong Colabora economicamente
       .float-right
         = number_to_currency(@purchase.spotus_donation[:amount] || 0)
       .clear
     - if current_user.total_credits > 0
       .donation.credit_line
         .float-left
-          CREDIT APPLIED
+          Cantidad 
         .float-right
           == - #{number_to_currency(current_user.total_credits)}
     %br/
@@ -46,18 +46,18 @@
 
     - unless @purchase.credit_covers_total?
       .block-spacer-negative
-      %h3 Pay With PayPal
+      %h3 Pagar con PayPal
       .double_content_border
       .span-595.box_yellow.create_a_tip_form
         - if @purchase.credit_covers_partial?
           #paypal_credit_notice
-            Credits are not supported for PayPal purchases at this time. You can pay with a credit card below to make the purchase now, you can pay the full amount by clicking Buy Now, or you can work around the issue by following these instructions:
+            PayPal no funciona en este momento. Puedes pagar con una tarjeta de crédito y financiar la noticia ahora.  
             %ol
               %li Remove the donations you wanted to purchase with PayPal from your cart
               %li Come back and purchase just the items covered by credit
               %li Re-donate and select PayPal for the items you wanted use PayPal for
         - else
-          Use PayPal to fund a donation with money in your PayPal account, or to pay with a credit card.
+          Usa PayPal para financiar una noticia directamente desde tu cuenta paypal o desde una tarjeta de crédito.
         .float-right
           - form_tag PAYPAL_POST_URL do
             = hidden_field_tag "return", paypal_return_myspot_purchases_url
@@ -80,9 +80,9 @@
     - form_for :purchase, :url => myspot_purchases_path do |f|
       - if @purchase.credit_covers_total?
         .span-595.box_yellow
-          You have enough credits to cover this transaction. Please click Purchase to continue.
+          Dispones de los créditos suficientes para realizar la transacción, por favor, haz click en financiar. 
       - else
-        %h3 Pay With Credit Card
+        %h3 Pagar con tarjeta de crédito. 
         .double_content_border
         .span-595.box_yellow.create_a_tip_form
           .row
@@ -129,7 +129,7 @@
         .double_content_border
 
       .float-right
-        %input{:type => "image", :src=>"/images/purchase.png", :alt => 'Purchase'}
+        %input{:type => "image", :src=>"/images/purchase.png", :alt => 'Financiar'}
 
   - # second column content
   .span-160.box_white

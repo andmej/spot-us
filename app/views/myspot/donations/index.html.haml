@@ -1,4 +1,4 @@
-%h2 My Spot
+%h2 Mi cuenta
 
 = render :partial => "myspot/nav"
 
@@ -6,11 +6,11 @@
   = render :partial => "myspot/dashboard_nav"
   %table.donations
     %tr
-      %th.pitch_header Pitch
-      %th.donated_header Donated
-      %th.donation_header Donation
-      %th.status_header Status
-      %th.actions_header Actions
+      %th.pitch_header Artículos
+      %th.donated_header Donado
+      %th.donation_header Financiar
+      %th.status_header Estado
+      %th.actions_header Acciones
     %tr
       %td{:colspan => 5}
         .double_content_border
@@ -20,7 +20,7 @@
       %tr
         %td.pitch
           = image_tag('support_spotus.png')
-          Support Spot.Us
+          Colabora con Spot.us
         %td.donated= current_user.last_paid_spotus_donation.created_at.to_s(:date)
         %td.donation= number_to_currency(current_user.paid_spotus_donations_sum)
         %td.status

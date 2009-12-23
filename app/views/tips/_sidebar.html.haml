@@ -1,42 +1,42 @@
 .span-160.box_white
   - if Pitch.createable_by?(current_user)
-    %h3 What is Spot.us?
+    %h3 Qué es Periodismoalacarta.com?
     .double_content_border
     %ul
       %li 
-        If you're a professional journalist,
-        = link_to "create a pitch instead of a tip", new_pitch_path
+        Si eres un periodista profesional,
+        = link_to "propón un artículo en vez de sugerir una investigación", new_pitch_path
       %li
-        Or
+        O
         = link_to "browse the community", news_items_path
-        to get inspiration for a new pitch or ping tips for an existing pitch.
+        para saber que es lo que le interesa a la comunidad o aportar algo sobre alguna investigación. 
     .double_content_border
     .centered
       = link_to image_tag('create_a_pitch.png'), new_pitch_path
     .create_tip_spacer
     .block-spacer-negative
-  %h3 Common Questions
+  %h3 Preguntas más frecuentes
   .double_content_border
-  %h4.title What's a Tip?
+  %h4.title ¿Qué es?
   %p.alt-spotus 
-    Anyone can create
-    = link_to "a news tip about an important topic", page_path("about", :anchor => "faq_citizen")
-    you think should be reported on? This is often related to the question "what are you
-    passionate about?" You can pledge to this tip, but no money is taken -
-    it's just a way to show how much interest you have in this possibly
-    becoming a pitch. Creating a tip could be the spark
-    that starts an investigation.
+    Cualquiera puede sugerir
+    = link_to " una investigación sobre un determinado tema", page_path("About", :anchor => "faq_citizen")
+    Denunciar una injusticia, un caso de corrupción, un temás en el que tengas interés de cualquier tipo...
+    Puedes prometer una donación en una determinada sugerencia pero en esta área las donaciones no tienen validez,
+    es solo una manera de ver tu grado de compromiso, el interés que suscita entre la comunidad 
+    y las posibilidades de ser recogida 
+    por un periodista.
 
-  %h4.title What do you mean "Pledge?"
+  %h4.title ¿Qué significa comprometerse?"
   %p.alt-spotus 
-    = link_to "Pledges do not represent an actual money transaction.", page_path("about", :anchor => "faq_citizen")
-    But, they do show the general monetary value that a story might command. When you "pledge"
-    a tip, it's similar to joining a group. If a journalist references this
-    tip in their pitch, you'll be notified and asked to DONATE real money at
-    that point.
+    = link_to "Comprometerse a realizar una donación no supone una transacción real de dinero.", page_path("about", :anchor => "faq_citizen")
+    Pero, nos ayuda a saber el presupuesto aproximado que se podría recaudar para realizar un reportaje. 
+    Si un periodista asocia su artículo a tú sugerencia debido a que son 
+    similares o tratan de lo mismo, serás notificado y se solicitará una donación, esta vez de dinero real,
+    por tu parte.
 
-  %h4.title What happens next?
+  %h4.title ¿Qué ocurre después?
   %p.alt-spotus 
-    We gather a group of supporters and if a reporter is inspired to build a pitch
-    from this tip we will let you know!
+    Intentamos que varias personas se comprometan y si a un reportero le inspira el tema
+    propondrá un artículo que deberá ser financiado. 
 

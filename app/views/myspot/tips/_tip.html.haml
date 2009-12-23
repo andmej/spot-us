@@ -2,7 +2,7 @@
   %td.tip
     - if tip.featured_image?
       = link_to image_tag(tip.featured_image.url(:thumb)), tip_url(tip)
-    TIP:
+    Investigación sugerida:
     = link_to h(tip.headline), tip_url(tip)
   %td.created= tip.created_at.to_s(:date)
   %td.pledges

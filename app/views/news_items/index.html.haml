@@ -1,7 +1,7 @@
 - content_for :head do
   = auto_discovery_link_tag(:rss, {:controller => 'news_items', :action => 'index', :format => 'rss'})
 
-- @title = "Spot.us - Fund A Story"
+- @title = "Perioismoalacarta.com- Financia una historia"
 .block-spacer
 
 #equalize
@@ -14,13 +14,13 @@
         %br/
     - form_tag(:search_news_items, :method => :get) do
       .span-3
-        %h4 Search
+        %h4 Búsqueda
       .span-7.search-check-box.colborder
         .div
-          %label Type
-          = select_tag "news_item_type", options_for_select([["Pitches", "pitches"],["Tips","tips"],["All", "news_items"]], params.fetch(:news_item_type, "pitches"))
+          %label Categoría
+          = select_tag "news_item_type", options_for_select([["Artículos", "pitches"],["Propuestas","tips"],["Todo", "news_items"]], params.fetch(:news_item_type, "pitches"))
         .div
-          = label_tag     :sort_by, "Sort By"
+          = label_tag     :sort_by, "Ordenar por"
           %select{:name => "sort_by"}
             = options_for_sorting(params.fetch(:news_item_type, "pitches"), params.fetch(:sort_by,"desc"))
         = link_to image_tag('rss_16.png'), news_items_path(:format => :rss)
@@ -33,7 +33,7 @@
     - if @news_items.blank?
       .box_white
         %p
-          There were no results for your search.  Try different search terms.
+          No hubo resultados para tu busqueda. Prueba con otros términos de búsqueda.
     = render :partial => @news_items
 
     = will_paginate @news_items

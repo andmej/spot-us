@@ -1,6 +1,6 @@
 - if news_item.donating_groups.any?
   .group_supporters
-    %h2.supporters Groups
+    %h2.supporters Grupos
     .supporters
       - news_item.donating_groups.each do |group|
         .person_avatar= image_tag(group.image.url(:thumb))

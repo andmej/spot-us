@@ -1,4 +1,4 @@
-- @title = "Spot.us - TIP: #{h @tip.headline}"
+- @title = "Periodismoalacarta.com - Sugiere una investigación: #{h @tip.headline}"
 
 .block-spacer
 #equalize
@@ -17,31 +17,31 @@
       .double_content_border
       = @tip.video_embed
     .block-spacer-negative
-    %h3 Comments
+    %h3 Comentarios
     .double_content_border
     .comments
-      %p= "There are no comments yet, be the first!" if @tip.comments.empty?
+      %p= "No hay comentarios todavía, se el primero!" if @tip.comments.empty?
       = render :partial => 'shared/comment', :collection => @tip.comments
-    %h3 Post A Comment
+    %h3 Haz un comentario
     .double_content_border
     - form_for [@tip, Comment.new], :html => {:class => 'auth'} do |f|
       = render :partial => 'comments/form', :locals => {:f => f}
   .span-220.column_v.box_white
     .centered= render :partial => "pledges/button", :locals => { :news_item => @tip }
     .block-spacer-negative
-    %h3 Related Pitches
+    %h3 Artículos relacionados
     .double_content_border
     = render :partial => "related_pitches", :object => @tip.pitches
     - if current_user && current_user.reporter? && current_user.pitches.any?
       .double_content_border
-      Add this tip to your pitch
+      Asocia esta sugerencia con un artículo
       %br/
       - form_for Affiliation.new do |f|
         = f.hidden_field :tip_id, :value => @tip.id
         = f.select :pitch_id, available_pitches_for(@tip)
         = f.submit "Attach"
     .block-spacer-negative
-    %h3 Keywords
+    %h3 Palabras clave
     .double_content_border
     %p= h @tip.keywords
     - if @tip.editable_by?(current_user)

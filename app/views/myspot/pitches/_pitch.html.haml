@@ -1,7 +1,7 @@
 %tr
   %td.pitch
     = link_to image_tag(pitch.featured_image.url(:thumb)), pitch_url(pitch)
-    PITCH:
+    Artículo:
     = link_to h(pitch.headline), pitch_url(pitch)
     - if pitch.unapproved?
       %br/
@@ -11,16 +11,16 @@
     = render :partial => "shared/table_progress_bar", :locals => {:pitch => pitch}
   %td.actions
     - if pitch.editable_by?(current_user)
-      .action= link_to "Edit", edit_pitch_url(pitch)
+      .action= link_to "Editar", edit_pitch_url(pitch)
     - if pitch.can_be_accepted?
-      .action= link_to "Accept", accept_myspot_pitch_url(pitch), :method => :put, :confirm => "Are you sure you want to accept this pitch, even though it isn't fully funded?"
+      .action= link_to "Aceptar", accept_myspot_pitch_url(pitch), :method => :put, :confirm => "¿Estás seguro de que quieres aceptar este artículo aunque no esté completamente financiado?"
     - if pitch.story
-      .action= link_to "Go to story", story_path(pitch.story)
+      .action= link_to "Ir a la historia", story_path(pitch.story)
     - if pitch.funded? || pitch.accepted?
       - unless pitch.story.nil?
         - if pitch.story.draft? 
           .action= link_to "Report", edit_story_url(pitch.story)
         - elsif pitch.story.published?
-          .action= link_to "View Published Story", story_url(pitch.story)
+          .action= link_to "Ver historia publicada", story_url(pitch.story)
     = link_to 'Make blog post', new_pitch_post_path(pitch)
 

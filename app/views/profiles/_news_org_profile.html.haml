@@ -4,7 +4,7 @@
 %h4.reg-line-height= h @profile.organization_name
 %p.reg-line-height= h @profile.network_and_category
 .date.quiet.reg-line-height
-  Established in
+  Establecida en
   = @profile.established_year
 - unless @profile.website.blank?
   %p.reg-line-height 
@@ -21,7 +21,7 @@
 
 - unless @profile.about_you.blank?
   %h3
-    About
+    Sobre
     = @profile.organization_name
 
   .alt-spotus= sanitize @profile.about_you

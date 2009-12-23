@@ -1,11 +1,11 @@
 #header
   .logo
     %p
-      = link_to "<span class='hide'>Spot.us - Periodismo a la carta</span>", "/", :class => "logo-link", :title => "Spot.us - Periodismo a la carta"
+      = link_to "<span class='hide'>Periodismoalacarta.com - Periodismo a la carta</span>", "/", :class => "logo-link", :title => "Periodismoalacarta.com - Periodismo a la carta"
   .nav-container
     %ul#main-nav
-      %li.start_story= facebox_login_link_to "Propon un tema", start_story_path
-      %li.fund_story= link_to "Investigaciones", news_items_path
-      %li.read_story= link_to "Publicaciones", stories_path
-      %li.about_spotus= link_to "About", page_path('about')
+      %li.start_story= link_to "Comienza una historia", start_story_path
+      %li.fund_story= link_to "Financiar", news_items_path
+      %li.read_story= link_to " Historias Publicadas", stories_path
+      %li.about_spotus= link_to "Nosotros", page_path('about')
   .clear
